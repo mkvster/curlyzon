@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{14894E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curlyzon.Model", "Curlyzon.Model\Curlyzon.Model.csproj", "{3A7287D0-A4E7-4308-9428-9188AAECEA4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curlyzon.Repository", "Curlyzon.Repository\Curlyzon.Repository.csproj", "{B48E4BEA-CB97-46CE-B230-5992FCAD3255}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{3A7287D0-A4E7-4308-9428-9188AAECEA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A7287D0-A4E7-4308-9428-9188AAECEA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A7287D0-A4E7-4308-9428-9188AAECEA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48E4BEA-CB97-46CE-B230-5992FCAD3255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48E4BEA-CB97-46CE-B230-5992FCAD3255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48E4BEA-CB97-46CE-B230-5992FCAD3255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48E4BEA-CB97-46CE-B230-5992FCAD3255}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

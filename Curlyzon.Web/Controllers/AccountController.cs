@@ -1,4 +1,5 @@
-﻿using Curlyzon.Repository.Contracts;
+﻿using Curlyzon.Model;
+using Curlyzon.Repository.Contracts;
 using Curlyzon.Web.Common;
 using Curlyzon.Web.Models.Account;
 using System;
@@ -41,10 +42,10 @@ namespace Curlyzon.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                string userId = _UserRepository.Login(model.UserName, model.Password);
-                if (!String.IsNullOrEmpty(userId))
+                SessionUserInfo sessionUserInfo = _UserRepository.Login(model.UserName, model.Password);
+                if (sessionUserInfo != null)
                 {
-                    Session["UserId"] = userId;
+                    SaveToSession(sessionUserInfo);
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl))
                     {
@@ -58,6 +59,12 @@ namespace Curlyzon.Web.Controllers
             }
             ModelState.AddModelError("", "Incorrect user name or password.");
             return View(model);
+        }
+
+        private void SaveToSession(SessionUserInfo sessionUserInfo)
+        {
+            Session["UserId"] = sessionUserInfo.UserId;
+            Session["UserRoles"] = sessionUserInfo.UserRoles;
         }
 
         [HttpPost]

@@ -1,4 +1,5 @@
-﻿using Curlyzon.Repository.Contracts;
+﻿using Curlyzon.Model;
+using Curlyzon.Repository.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,14 @@ namespace Curlyzon.Repository.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public string Login(string userName, string password)
+        public SessionUserInfo Login(string userName, string password)
         {
             //TODO
-            return userName;
+            return new SessionUserInfo()
+            {
+                UserId = userName,
+                UserRoles = new List<string>() { "admin" }
+            };
         }
     }
 }

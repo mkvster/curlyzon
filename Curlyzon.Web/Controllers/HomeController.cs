@@ -14,5 +14,17 @@ namespace Curlyzon.Web.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult Test1()
+        {
+            return Content("Test1");
+        }
+
+        [Authorize(Roles = "Tester")]
+        public ActionResult Test2()
+        {
+            return Content("Test2");
+        }
     }
 }

@@ -993,6 +993,10 @@
       <Project>{3a7287d0-a4e7-4308-9428-9188aaecea4c}</Project>
       <Name>Curlyzon.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Curlyzon.Repository\Curlyzon.Repository.csproj">
+      <Project>{b48e4bea-cb97-46ce-b230-5992fcad3255}</Project>
+      <Name>Curlyzon.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

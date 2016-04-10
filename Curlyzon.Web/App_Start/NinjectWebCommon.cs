@@ -1,3 +1,6 @@
+using Curlyzon.Repository.Contracts;
+using Curlyzon.Repository.Repositories;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Curlyzon.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Curlyzon.Web.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +64,7 @@ namespace Curlyzon.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IUserRepository>().To<UserRepository>().InRequestScope();
         }        
     }
 }

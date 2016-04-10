@@ -1,4 +1,5 @@
-﻿using Curlyzon.Web.Common;
+﻿using Curlyzon.Repository.Contracts;
+using Curlyzon.Web.Common;
 using Curlyzon.Web.Models.Account;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,13 @@ namespace Curlyzon.Web.Controllers
 {
     public class AccountController : BaseController
     {
+        private readonly IUserRepository _UserRepository;
+
+        public AccountController(IUserRepository userRepository)
+        {
+            _UserRepository = userRepository;
+        }
+
         //
         // GET: /Account/Login
         public ActionResult Login(string returnUrl, LoginViewModel model)
@@ -33,8 +41,7 @@ namespace Curlyzon.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                // TODO: check credentials
-                string userId = model.UserName;
+                string userId = _UserRepository.Login(model.UserName, model.Password);
                 if (!String.IsNullOrEmpty(userId))
                 {
                     Session["UserId"] = userId;
